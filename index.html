@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Frontend M2</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">WeatherApp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="detalle.html">Detalle</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Acerca de</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container my-4">
+    <section>
+      <h1 class="text-center mb-4">Clima en distintas localidades</h1>
+      <div class="row">
+        <!-- Ejemplo de card repetida para 10 localidades -->
+        <div class="col-md-4 col-sm-6 mb-3">
+          <article class="card text-center">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Clima">
+            <div class="card-body">
+              <h5 class="card-title">Santiago</h5>
+              <p class="card-text">☀️ 25°C - Soleado</p>
+              <a href="detalle.html?ciudad=Santiago" class="btn btn-primary">Ver detalle</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+          <article class="card text-center">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Clima">
+            <div class="card-body">
+              <h5 class="card-title">Valparaíso</h5>
+              <p class="card-text">🌤️ 20°C - Parcialmente nublado</p>
+              <a href="detalle.html?ciudad=Valparaiso" class="btn btn-primary">Ver detalle</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Repite este bloque para llegar a 10 localidades -->
+        <!-- ... -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-3">
+    <p>Weather Frontend M2 - Proyecto académico</p>
+    <p><small>Desarrollado con HTML5, Bootstrap y JavaScript</small></p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Tu script -->
+  <script src="script.js"></script>
+</body>
+</html>
