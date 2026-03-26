@@ -1,0 +1,15 @@
+.detalle {
+  &__titulo {
+    font-family: $font-main;
+    color: $color-primary;
+  }
+
+  &__card {
+    @include card-style;
+    background-color: $color-light;
+  }
+
+  &__lista {
+    margin-top: 1rem;
+  }
+}

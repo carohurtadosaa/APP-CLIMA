@@ -1,0 +1,28 @@
+.header__logo {
+  font-weight: bold;
+  color: #f8f9fa;
+}
+
+.footer {
+  background-color: #f8f9fa;
+}
+.footer__texto {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.detalle__titulo {
+  font-family: "Arial", sans-serif;
+  color: #0d6efd;
+}
+.detalle__card {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+.detalle__lista {
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
