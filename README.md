@@ -1,40 +1,35 @@
-# 🌦️ Weather Frontend M2
+}# WeatherApp - APP CLIMA 🌦️
 
-## 📌 Propósito
-Este proyecto corresponde al MVP de una aplicación de clima desarrollada como práctica de **HTML5 semántico**, **Bootstrap** para estilos y diseño responsivo, y **JavaScript** para interacciones básicas.  
-El objetivo es aplicar lo aprendido en el bootcamp y generar un entregable versionado en Git/GitHub.
+Proyecto académico desarrollado en el **Módulo 3 - Frontend Trainee SENCE**, cuyo objetivo es construir una aplicación web que muestre información del clima en distintas localidades de Chile, utilizando **HTML5, Bootstrap, SASS y JavaScript**.
 
 ---
 
-## 🎯 Objetivos de aprendizaje
-- Estructurar páginas con HTML5 semántico.
-- Aplicar Bootstrap (grid, utilidades, componentes) para un layout responsivo (mobile-first).
-- Manipular el DOM con JavaScript (eventos y estados simples).
-- Gestionar el proyecto con Git/GitHub (commits descriptivos, ramas y README).
+## 🚀 Alcance del MVP
+- **Vista de Inicio (index.html):** tarjetas dinámicas con información básica del clima en 10 ciudades.
+- **Vista de Detalle (detalle.html):** información ampliada de cada ciudad, incluyendo temperatura, estado, humedad, viento y pronóstico semanal.
+- **Componentes consistentes:** header (navbar) y footer en todas las vistas.
+- **Guía de estilos coherente:** colores, tipografía y espaciado definidos en SASS.
 
 ---
 
-## 📂 Alcance (MVP)
-- **Home (index.html):**  
-  Grilla de ≥10 localidades presentadas como cards de Bootstrap con clima actual (icono, temperatura, estado).
-- **Detalle (detalle.html):**  
-  Vista con datos ampliados de la ciudad seleccionada (temperatura, humedad, viento) y pronóstico semanal.
-- **Navegación:**  
-  Navbar con enlaces a Home, Detalle y opcional Acerca de.  
-  Footer con información básica del proyecto.
+## 🎨 Metodología de Estilos
+Se implementó la metodología **BEM (Block, Element, Modifier)** para mantener consistencia en las clases CSS.
 
----
+Ejemplo:
+```html
+<header class="header">
+  <nav class="header__navbar">
+    <a class="header__logo">WeatherApp</a>
+  </nav>
+</header>
 
-## ⚙️ Requisitos técnicos
-- HTML5 semántico (header, nav, main, section, article, footer).
-- Bootstrap por CDN (CSS y JS).
-- JavaScript básico para interacción (click en card → ver detalle).
-- Responsive: mobile (≤420 px) y escritorio (≥1024 px).
-- Git/GitHub: repo público `APP-CLIMA`, mínimo 3 commits descriptivos.
 
----
-
-## 🚀 Instalación y uso
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/carohurtadosaa/APP-CLIMA.git
+scss/
+  _variables.scss   // Colores, tipografías, breakpoints
+  _mixins.scss      // Mixins reutilizables (ej: estilos de tarjetas)
+  _header.scss      // Estilos del header
+  _footer.scss      // Estilos del footer
+  _detalle.scss     // Estilos específicos de la vista detalle
+  style.scss        // Archivo principal que importa todos los parciales
+css/
+  style.css         // CSS compilado final
