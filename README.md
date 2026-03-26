@@ -38,5 +38,60 @@ scss/
 css/
   style.css         // CSS compilado final
 
-GITHUB
+```
+
+```
+{
+  id: 1,
+  nombre: "Playa Reñaca",
+  tempActual: 22,
+  pronosticoSemanal: [
+    { dia: "Lunes", temp: 20, estado: "Soleado" },
+    { dia: "Martes", temp: 18, estado: "Nublado" },
+    ...
+  ]
+}
+```
+
+## 📊 Estadísticas calculadas
+La aplicación procesa el pronóstico semanal de cada lugar usando ciclos y condicionales en JavaScript.
+Se generan automáticamente:
+
+- Temperatura mínima de la semana.
+
+- Temperatura máxima de la semana.
+
+- Promedio de temperaturas.
+
+- Conteo de estados del clima (ej. cuántos días soleados, nublados o lluviosos).
+
+- Resumen textual automático según el estado predominante (ej. “Predominan los días soleados, ideal para actividades al aire libre.”).
+
+## 🚀 Navegación
+En index.html se muestran las tarjetas de los lugares disponibles.
+
+Cada tarjeta incluye un botón que lleva a detalle.html?id=....
+
+En detalle.html se despliega el pronóstico semanal, las estadísticas y el resumen generado dinámicamente.
+
+## 🔧 Instalación y ejecución
+Clona el repositorio:
+```
+bash
+git clone https://github.com/carohurtadosaa/APP-CLIMA
+```
+- Abre la carpeta del proyecto en VS Code.
+
+- Instala la extensión Live Server.
+
+- Haz clic derecho en index.html → Open with Live Server.
+
+- Navega entre las vistas:
+
+- Inicio: http://127.0.0.1/index.html
+
+- Detalle: http://127.0.0.1/detalle.html?id=1 (o cualquier id válido).
+
+## GITHUB 
+
 https://github.com/carohurtadosaa/APP-CLIMA

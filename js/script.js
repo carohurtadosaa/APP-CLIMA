@@ -1,53 +1,43 @@
-const apiKey = "TU_API_KEY"; // Reemplaza con tu clave de OpenWeatherMap
+// script.js
+
+// Obtener el id desde la URL
 const params = new URLSearchParams(window.location.search);
-const ciudad = params.get("ciudad");
+const id = parseInt(params.get("id"));
 
-// Elementos del DOM
-const nombre = document.getElementById("ciudad-nombre");
-const temp = document.getElementById("ciudad-temp");
-const estado = document.getElementById("ciudad-estado");
-const humedad = document.getElementById("ciudad-humedad");
-const viento = document.getElementById("ciudad-viento");
-const pronostico = document.getElementById("pronostico");
+// Buscar el lugar en el arreglo (función definida en funciones.js)
+const lugar = buscarLugar(id);
 
-// Datos actuales
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`)
-  .then(res => res.json())
-  .then(data => {
-    nombre.textContent = data.name;
-    temp.textContent = `${data.main.temp} °C`;
-    estado.textContent = data.weather[0].description;
-    humedad.textContent = `Humedad: ${data.main.humidity}%`;
-    viento.textContent = `Viento: ${data.wind.speed} m/s`;
-  })
-  .catch(err => {
-    nombre.textContent = "Error al cargar datos";
-    console.error(err);
-  });
+if (lugar) {
+  // Elementos del DOM
+  const nombre = document.getElementById("ciudad-nombre");
+  const temp = document.getElementById("ciudad-temp");
+  const estado = document.getElementById("ciudad-estado");
+  const humedad = document.getElementById("ciudad-humedad");
+  const viento = document.getElementById("ciudad-viento");
+  const pronostico = document.getElementById("pronostico");
+  const resumen = document.getElementById("resumen");
 
-// Pronóstico semanal (5 días cada 3 horas)
-fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`)
-  .then(res => res.json())
-  .then(data => {
-    const dias = {};
-    data.list.forEach(item => {
-      const fecha = new Date(item.dt_txt).toLocaleDateString("es-CL", { weekday: "long" });
-      if (!dias[fecha]) {
-        dias[fecha] = item;
-      }
-    });
+  // Datos actuales
+  nombre.textContent = lugar.nombre;
+  temp.textContent = `${lugar.tempActual} °C`;
+  estado.textContent = lugar.pronosticoSemanal[0].estado;
 
-    for (const [dia, info] of Object.entries(dias)) {
-      const li = document.createElement("li");
-      li.className = "list-group-item";
-      li.textContent = `${dia}: ${info.main.temp}°C - ${info.weather[0].description}`;
-      pronostico.appendChild(li);
-    }
-  })
-  .catch(err => {
+  // Calcular estadísticas
+  const stats = calcularEstadisticas(lugar.pronosticoSemanal);
+  humedad.textContent = `Min: ${stats.min}°C | Max: ${stats.max}°C`;
+  viento.textContent = `Promedio: ${stats.promedio.toFixed(1)}°C`;
+
+  // Renderizar pronóstico semanal
+  lugar.pronosticoSemanal.forEach(dia => {
     const li = document.createElement("li");
     li.className = "list-group-item";
-    li.textContent = "Error al cargar pronóstico.";
+    li.textContent = `${dia.dia}: ${dia.temp}°C - ${dia.estado}`;
     pronostico.appendChild(li);
-    console.error(err);
   });
+
+  // Resumen textual
+  resumen.textContent = generarResumen(stats.conteoEstados);
+
+} else {
+  document.getElementById("ciudad-nombre").textContent = "Error al cargar datos";
+}
