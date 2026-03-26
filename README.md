@@ -22,6 +22,7 @@ Ejemplo:
     <a class="header__logo">WeatherApp</a>
   </nav>
 </header>
+```
 
 
 scss/
@@ -33,3 +34,7 @@ scss/
   style.scss        // Archivo principal que importa todos los parciales
 css/
   style.css         // CSS compilado final
+
+GITHUB
+https://github.com/carohurtadosaa/APP-CLIMA
+  
