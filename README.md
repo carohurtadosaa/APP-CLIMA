@@ -39,4 +39,4 @@ css/
   style.css         // CSS compilado final
 
 GITHUB
-[APP CLIMA](https://github.com/carohurtadosaa/APP-CLIMA)
+https://github.com/carohurtadosaa/APP-CLIMA
