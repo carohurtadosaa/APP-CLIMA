@@ -33,3 +33,4 @@ scss/
   style.scss        // Archivo principal que importa todos los parciales
 css/
   style.css         // CSS compilado final
+
