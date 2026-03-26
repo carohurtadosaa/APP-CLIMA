@@ -1,4 +1,4 @@
-}# WeatherApp - APP CLIMA 🌦️
+# WeatherApp - APP CLIMA 🌦️
 
 Proyecto académico desarrollado en el **Módulo 3 - Frontend Trainee SENCE**, cuyo objetivo es construir una aplicación web que muestre información del clima en distintas localidades de Chile, utilizando **HTML5, Bootstrap, SASS y JavaScript**.
 
