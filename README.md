@@ -92,6 +92,28 @@ git clone https://github.com/carohurtadosaa/APP-CLIMA
 
 - Detalle: http://127.0.0.1/detalle.html?id=1 (o cualquier id válido).
 
+## 🚀 Cambios realizados
+- Eliminamos los archivos `data.js` y `funciones.js` (ya no se usan datos locales).
+- Creamos dos scripts principales:
+  - `app.js`: carga el clima actual de varias ciudades y renderiza tarjetas dinámicas en `index.html`.
+  - `script.js`: muestra detalle de una ciudad seleccionada, con pronóstico semanal, estadísticas y alertas.
+- Ajustamos los archivos HTML:
+  - `index.html`: ahora solo importa `app.js`.
+  - `detalle.html`: ahora solo importa `script.js`.
+  - Los enlaces pasan parámetros con `?ciudad=NombreCiudad` en lugar de `?id=...`.
+- Se modularizó la lógica con **clases y funciones asincrónicas** (`async/await`).
+- Se documentó el flujo de navegación:
+  - **Home** → tarjetas con clima actual.
+  - **Detalle** → información ampliada de la ciudad seleccionada.
+
+---
+
+## 🔑 Configuración de la API
+1. Crear una cuenta en [OpenWeatherMap](https://openweathermap.org/api).
+2. Generar una **API Key** en el perfil.
+3. Reemplazar `"TU_API_KEY"` en `app.js` y `script.js` por tu clave real:
+   ```js
+
 ## GITHUB 
 
 https://github.com/carohurtadosaa/APP-CLIMA
